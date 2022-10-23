@@ -91,3 +91,6 @@ module.exports = {
 
 **Origin:** [gabrieli/jest-serial-runner](https://github.com/gabrieli/jest-serial-runner)
 
+**Contributors**
+
+1. [Adam Uhlíř](https://github.com/AuHau)
