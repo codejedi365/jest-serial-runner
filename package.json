@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/codejedi365/jest-serial-runner#readme",
   "peerDependencies": {
-    "jest-runner": "27.x"
+    "jest-runner": "27.x - 29.x"
   },
   "publishConfig": {
     "access": "public"
