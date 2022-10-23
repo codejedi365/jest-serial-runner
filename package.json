@@ -17,12 +17,10 @@
     "runinband",
     "run-in-band"
   ],
-  "author": "gabrieli",
+  "author": "gabrieli <gabriel.ionescu.08@gmail.com>",
   "contributors": [
-    {
-      "name": "codejedi365",
-      "email": "codejedi365@gmail.com"
-    }
+    "codejedi365 <codejedi365@gmail.com>",
+    "Adam Uhlíř <adam@uhlir.dev>"
   ],
   "license": "MIT",
   "bugs": {
@@ -30,7 +28,7 @@
   },
   "homepage": "https://github.com/codejedi365/jest-serial-runner#readme",
   "peerDependencies": {
-    "jest-runner": "27.x"
+    "jest-runner": "27.x - 29.x"
   },
   "publishConfig": {
     "access": "public"
