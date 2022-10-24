@@ -7,4 +7,4 @@ on:
 
 jobs:
   validate:
-    uses: ./.github/workflows/ci.yml@master
+    uses: ./.github/workflows/ci.yml
