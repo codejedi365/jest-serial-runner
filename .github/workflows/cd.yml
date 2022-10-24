@@ -1,0 +1,32 @@
+name: Deliver
+# privileged workflow that is restricted to master & next
+# in order to correspond to @latest and @next
+
+on:
+  workflow_run:
+    workflows: [ Branch Update ]
+    types: [ completed ]
+    branches: [ master, next ]
+
+jobs:
+
+  release:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: git checkout HEAD
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --prefer-offline --no-fund --no-audit
+
+      - name: Run semantic-release
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
