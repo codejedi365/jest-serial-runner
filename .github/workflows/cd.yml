@@ -29,6 +29,12 @@ jobs:
       - name: Install dependencies
         run: npm install --prefer-offline --no-fund --no-audit
 
+      - name: Clean package.json
+        run:
+          - npm pkg delete scripts
+          - npm pkg delete devDependencies
+          - npm pkg delete config
+
       - name: Run semantic-release
         run: npx semantic-release
         env:
